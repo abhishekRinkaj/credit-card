@@ -1,83 +1,131 @@
-# Cars24_data_Analysis
-Analyzed car listings from the Cars24 website across different cities to identify market trends and insights for strategic planning.
-# Cars24
-Level:1
-To scrape the data from the Cars24 website we have used Beautifulsoups and Selenium library in Python.
 
-Level 2: 
-To clean the datasets after scraping according to the requirement we have used the Pandas library.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c82322bb-7f17-4dae-9dac-54c8e0be38cf" alt="Dashboard Screenshot" width="800" height="600">
+</p>
 
-Level 3:
-To Visualise the data with some insights we have used the matplotlib and seaborn libraries from Python. We have also used Tableau for better visualization.
 
-Requirements: 
+The bank wants to improve their services. For instance, the bank managers have only vague idea, who is a good client (whom to offer some additional services) and who is a bad client (whom to watch carefully to minimize the bank loses). Fortunately, the bank stores data about their clients, the accounts (transactions within several months), the loans already granted, the credit cards issued The bank managers hope to improve their understanding of customers and seek specific actions to improve services. A mere application of a discovery tool will not be convincing for them.
 
-Table 1: `Cars24 Data` 
-Attributes required in the table
-1. **`Brand**:`
-    - *Data Type*: String
-    - *Description*: The brand or manufacturer of the used car.
-2. **`Car Model**:`
-    - *Data Type*: String
-    - *Description*: The model of the used car.
-3. **`Car Name**:`
-    - *Data Type*: String
-    - *Description*: The name or make of the used car.
-4. **`Car Variant**:`
-    - *Data Type*: String
-    - *Description*: The specific variant or version of the used car.
-5. **`Car Transmission**:`
-    - *Data Type*: String
-    - *Description*: The type of transmission system in the used car.
-6. **`KM Driven**:`
-    - *Data Type*: Integer
-    - *Description*: The total distance the car has been driven.
-7. **`Owner Type**:`
-    - *Data Type*: String
-    - *Description*: The type of car owner (e.g., first owner, second owner).
-8. **`Fuel Type**:`
-    - *Data Type*: String
-    - *Description*: The type of fuel the used car operates on.
-9. **`Registration ID**:`
-    - *Data Type*: String
-    - *Description*: The unique registration ID of the used car.
-10. **`Monthly EMI**:`
-    - *Data Type*: Float or String
-    - *Description*: The monthly Equated Monthly Installment for the used car.
-11. **`Car Price**:`
-    - *Data Type*: Float or String
-    - *Description*: The total price of the used car.
-12. **`Downpayment Amount**:`
-    - *Data Type*: Float or String
-    - *Description*: The initial downpayment amount for the used car.
-13. **`Location**:`
-    - *Data Type*: String
-    - *Description*: The location or city where the used car is listed.
+<h1 align="center">Dashboard</h1>
 
-Step-by-step scraping:
 
-To scrape these as a table we first get a link of each car from the location.
-This is under the Link.py file.
+![Screenshot 2024-07-22 114629](https://github.com/user-attachments/assets/16db9a97-1611-4e54-9188-d62165fefc39)
 
-To scrape the data inside the link found in the above is under the Cars Details.py file.
 
-To automate this we have used the for loop and looped over each link and scraped then, saved the data as a pd.dataframe and into csv file.
-The code is under the Cars24_delhi_ncr_data.py and Cars_mumbai_data.py and the csv file are cars24_delhi-ncr.csv and cars24_mumbai.csv
+![Screenshot 2024-07-22 114708](https://github.com/user-attachments/assets/d2549ec8-333a-43c2-a967-4cc5731ddd55)
 
-After we have the main.py file which has automated all the processes of scraping the data from all cities required using multiple for loop.
 
-The csv files will be the same.
 
-After this, we can do the data-cleaning process. The code is inside the Data_cleaning.py file and we will get two cleaned csv files named cleaned_cars24_delhi-ncr.csv, and cleaned_cars24_mumbai.csv.
+<h1 align="center">REPORTS</h1>
 
-The visualization is done with different Python libraries like Matplotlib, seaborn, pandas, and numpy in Project_Cars24. The Tableau screenshots are attached here:
 
-![WhatsApp Image 2024-06-17 at 10 35 39 PM](https://github.com/Sandhya-16-m-64/Cars24/assets/172419475/0fedbfaa-9455-4d79-a2e5-4d9a60628b0d)![WhatsApp Image 2024-06-17 at 10 36 40 PM](https://github.com/Sandhya-16-m-64/Cars24/assets/172419475/7283ea7a-2407-4834-a3da-ece7a12c9376)
-![WhatsApp Image 2024-06-17 at 10 37 31 PM](https://github.com/Sandhya-16-m-64/Cars24/assets/172419475/c276f4d5-bab4-420d-9e3a-62f85cce0a74)
-![WhatsApp Image 2024-06-17 at 10 39 49 PM](https://github.com/Sandhya-16-m-64/Cars24/assets/172419475/369f888c-6a27-4c8b-b400-f777f6b36550)
-![WhatsApp Image 2024-06-17 at 10 44 09 PM](https://github.com/Sandhya-16-m-64/Cars24/assets/172419475/b64f42ad-33a0-4c90-bfe6-806dbcfa1bf4)
-![WhatsApp Image 2024-06-17 at 10 45 22 PM](https://github.com/Sandhya-16-m-64/Cars24/assets/172419475/0499e9d6-c51d-4462-ba06-8a5627f12f27)
+## Client Classification:
+The analysis involves understanding client data, transactions, loans, and credit cards.
+We have surfaced some of the clients who can default. And the metrics we used for classification was how many times the balance in their accounts 
+were lesser than required according to industry standards
+
+## Economic Disparities:
+There is a large variance in average salary by district, indicating significant economic disparities across different regions.
+Understanding these variances can help in tailoring loan products and services to clients based on their district's economic profile.
+districts like ('Hl.m. Praha', 'Mlada Boleslav', 'Plzen - mesto', 'Ostrava - mesto','Most') has really good average salaries
+districts like (Chomutov,Zlin,Pardubice,Ceska Lipa) are both good in avg balance and avg salary
+
+## Patterns in Risk:
+Both the amount and duration of loans are key indicators of risk. Larger and longer loans are generally more problematic.
+These patterns suggest that the bank should be cautious when approving larger and longer loans, possibly implementing stricter credit checks or requiring more collateral.
+There is significant variance in average salary by district, which influences loan performance.
+Key factors influencing loan success or failure are average salary, loan duration, and loan amount.
+
+
+## Summary
+These findings highlight the importance of careful loan approval processes, region-specific strategies, and ongoing improvements in data quality and model precision. 
+By addressing these areas, the bank can enhance its understanding of client behavior, improve service offerings, and minimize financial risks.
 
 
 
 
+
+<h1 align="center">SOME DETAILED SUMMARY</h1>
+
+## Data Understanding
+1. Business is based of operations in any regular bank such as transactions, clients, credit cards and loans.
+
+2. Analysis of data tables relationships
+3. Understanding the attribute’s “names” and their meaning
+4. Understanding the attribute’s content meaning (possible values of each attribute like the range and type
+
+
+## Data Preparation
+
+Renaming attribute’s names for more meaningful keywords.
+Spreadsheet “Demographic Data”
+Extract implicit knowledge
+Extract “birthdate” and “sex” from clients birth number
+Extract client age from birth number
+Eliminate incoherence provoked by empty files
+District D69 had missing values that were replace by average value of all other districts
+Retrieve useful information from “transaction” datasheet.
+Ex.: Accounts with history of sanctions
+
+<h1 align="center">CHARTS</h1>
+
+#  Salary data distribution
+
+Data shows a large variance of average salary by district.
+![Screenshot 2024-07-22 123437](https://github.com/user-attachments/assets/9c7d9582-c4c0-4a58-97cf-76fafb184720)
+
+#  Balance data distribution 
+![Screenshot 2024-07-22 123524](https://github.com/user-attachments/assets/62eac367-0e8c-4641-838f-ab30f74782b5)
+
+![Screenshot 2024-07-22 120655](https://github.com/user-attachments/assets/632c42e4-2219-403d-b86f-ee725fb658fe)
+![Screenshot 2024-07-22 130126](https://github.com/user-attachments/assets/55a9abb8-ceaa-4b20-bd67-a41cf69297f1)
+
+# Number of clients per region
+
+Data seams equal distributed by region.
+![Screenshot 2024-07-22 114932](https://github.com/user-attachments/assets/0e3dce62-a154-4b93-abe8-0de97fb0d8d2)
+
+
+# Clients gender distribution
+
+Data seems equally distributed between genders, so seems there is no bias on gender.
+![Screenshot 2024-07-22 115039](https://github.com/user-attachments/assets/e38932a1-274b-4393-aa31-1027f287fcb2)
+
+
+# Loan amount distribution by status
+
+We see a pattern that loans with larger amounts tend to be more risky with clients staying with debts (type B). On the other hand, clients with smaller loans tend to finish all the loans without problems (type A).
+
+On running contracts, we see that larger loans tend to be more suitable indebting clients (type D).
+![Screenshot 2024-07-22 132221](https://github.com/user-attachments/assets/5a57b0bd-4cca-4ddc-87aa-2c9377802030)
+
+
+
+
+
+# Loan duration distribution by status
+
+We see a pattern that loans with longer durations tend to be more risky with clients staying with debts (type B). On the other hand, clients with smaller contract durations tend to finish all the loans without problems (type A).
+
+On running contracts, we see that longer duration loans tend to be more suitable for indebting the clients (type D).
+![Screenshot 2024-07-22 132234](https://github.com/user-attachments/assets/c2c830b5-0772-4c7c-b316-c489ab8918f8)
+
+
+
+# Data problems and applied solutions
+
+We had a small dataset of finished loans 
+Around 234 finished loans (loans with status A or B)
+Around 448 active loans (loans with status C or D)
+Recurrent overfitting the model.
+Modification of (pre)pruning parameters.
+Ignoring of irrelevant attributes.
+We opted for not using any date related field because that would make the model unsuitable for future predictions.
+We opted to not use gender as a decision variable too.
+There isn’t a good distribution of loans by status.
+The majority of the current loans are of type C and finished loans of type A, difficulting the prediction of bad indicators for loans.
+
+# Conclusion
+
+We come to the conclusion that the most influencing attributes for loans success or failure are “average salary” of clients demographic data, “duration” and “amount” of the loans.
+But in general this is a unsatisfactory result with really low precision.
